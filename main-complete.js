@@ -44,8 +44,8 @@ function initVisualizer() {
   const canvas = document.body.appendChild(document.createElement("canvas"));
 
   // set dimensions
-  canvas.width = 640
-  canvas.height = 360
+  canvas.width = window.innerWidth
+  canvas.height = window.innerHeight
 
   // get canvas context to draw in
   const ctx = canvas.getContext("2d")
