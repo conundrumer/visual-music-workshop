@@ -24,7 +24,7 @@ if (audio.state === "suspended") {
 
 function setupAudioInput() {
   // ask for mic input
-  navigator.getUserMedia({audio:true}, (stream) => {
+  navigator.mediaDevices.getUserMedia({audio:true}).then((stream) => {
     // take mic stream and connect to analyzer
     const streamNode = audio.createMediaStreamSource(stream)
     streamNode.connect(analyzer)
