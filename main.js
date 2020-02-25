@@ -16,7 +16,7 @@ if (audio.state === "suspended") {
 }
 
 function setupAudioInput() {
-  navigator.getUserMedia({audio:true}, (stream) => {
+  navigator.mediaDevices.getUserMedia({audio:true}).then((stream) => {
     const streamNode = audio.createMediaStreamSource(stream)
     streamNode.connect(analyzer)
 
